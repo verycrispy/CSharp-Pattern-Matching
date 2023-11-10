@@ -8,6 +8,7 @@ namespace PatternMatching.Models
 {
     public class SomeType 
     {
+        public int SomeProperty { get; set; }
         public bool SomeMethod() { return false; }
     }
     
