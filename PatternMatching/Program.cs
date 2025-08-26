@@ -27,6 +27,10 @@ Console.WriteLine("\n--LogicalPattern--");
 Console.WriteLine(LogicalPattern.Classify(5.6M));
 Console.WriteLine(LogicalPattern.Classify(8.5M));
 
+Console.WriteLine("\n--PositionalPattern--");
+Console.WriteLine(PositionalPattern.GetGroupTicketPriceDiscount(5, new DateTime(2025, 9, 1)));
+Console.WriteLine(PositionalPattern.GetGroupTicketPriceDiscount(15, new DateTime(2025, 9, 3)));
+
 Console.WriteLine("\n--PropertyPattern.Classify--");
 Console.WriteLine(PropertyPattern.Classify("Christian"));
 Console.WriteLine(PropertyPattern.Classify(null));
