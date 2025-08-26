@@ -1,10 +1,4 @@
-﻿using PatternMatching.Models;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace PatternMatching
 {
@@ -21,13 +15,14 @@ namespace PatternMatching
             Console.WriteLine(numbers is [_, <= 2, >= 3]);  // True
         }
 
-        public static string ProcessName(string[] data) => data switch
+        public static string ProcessName(string[]? data) => data switch
         {
-            ["Christian", "Peeters"] => "Auteur",
-            [_, "de", .. ] => "Tussenvoegsel \"de\"",
-            [_, .. var tussenvoegsels, _] => $"Meerdere tussenvoegsels: {string.Join(", ", tussenvoegsels)}",
-            [] => "empty",
-            not [] => "null",
+            null => "Null",
+            [] => "Empty",
+            ["Christian", "Peeters"] => "Author",
+            [_, "de", ..] => "Prefix \"de\"",
+            [_, .. var tussenvoegsels, _] => $"Prefixes: {string.Join(", ", tussenvoegsels)}",
+            not [] => "NAME",
         };
 
         public static decimal ProcessCSV(string data)

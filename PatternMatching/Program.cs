@@ -44,25 +44,21 @@ ListPattern.PrintNumberPatterns();
 
 
 Console.WriteLine("\n--ListPattern.ProcessName--");
-//Auteur
 Console.WriteLine(ListPattern.ProcessName(new string[] { "Christian", "Peeters" }));
-// Tussenvoegsel "de"
 Console.WriteLine(ListPattern.ProcessName(new string[] { "Christian", "de", "Vries" }));
-// Meerdere tussenvoegsels: van, de
 Console.WriteLine(ListPattern.ProcessName(new string[] { "Christian", "van", "de", "Ven" }));
-// empty
+Console.WriteLine(ListPattern.ProcessName(new string[] { "Yvo", "Kaptein" }));
 Console.WriteLine(ListPattern.ProcessName(new string[0]));
-// null
 Console.WriteLine(ListPattern.ProcessName(null));
 
 Console.WriteLine("\n--ListPattern.ProcessCSV--");
-string crapyCsv = @"11-01-2023, DEPOSIT,     Initial deposit,            2250.00
-                    11-15-2023, DEPOSIT,     Refund,                      125.65
-                    11-18-2023, DEPOSIT,     Paycheck,                    825.65
-                    11-22-2023, WITHDRAWAL,  Debit,           Groceries,  255.73
-                    11-01-2023, WITHDRAWAL,  #1102,           Rent, apt, 2100.00
-                    11-02-2023, INTEREST,                                   0.65
-                    11-07-2023, WITHDRAWAL,  Debit,           Movies,      12.57
-                    11-15-2023, FEE,                                       5.55";
+string crapyCsv = @"08-01-2025, DEPOSIT,     Initial deposit,            2250.00
+                    08-15-2025, DEPOSIT,     Refund,                      125.65
+                    08-18-2025, DEPOSIT,     Paycheck,                    825.65
+                    08-22-2025, WITHDRAWAL,  Debit,           Groceries,  255.73
+                    08-01-2025, WITHDRAWAL,  #1102,           Rent, apt, 2100.00
+                    08-02-2025, INTEREST,                                   0.65
+                    08-07-2025, WITHDRAWAL,  Debit,           Movies,      12.57
+                    08-15-2025, FEE,                                       5.55";
 
 Console.WriteLine(ListPattern.ProcessCSV(crapyCsv).ToString());

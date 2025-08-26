@@ -6,10 +6,10 @@ namespace PatternMatching
     {
         public static string Classify(string name) => name switch
         {
-            { Length: <= 3 } => "korte naam",
-            { Length: > 3 and <= 8 } => "naam gemiddelde lengte",
-            { Length: > 8 } => "lange naam",
-            _ => "invalide",
+            { Length: <= 3 } => "short name",
+            { Length: > 3 and <= 8 } => "medium-length name",
+            { Length: > 8 } => "long name",
+            _ => "invalid",
         };
 
         public static decimal CalculateDiscount(Order order) => order switch
