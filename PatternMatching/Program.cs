@@ -1,5 +1,6 @@
 ﻿using PatternMatching;
 using PatternMatching.Models;
+using System.Diagnostics;
 
 Console.WriteLine("--SwitchNotation--");
 Console.WriteLine(SwitchNotation.OriginalNotation(1));
@@ -13,8 +14,11 @@ Console.WriteLine(SwitchNotation.ModernNotation(3));
 Console.WriteLine("\n--TypePattern--");
 Console.WriteLine(TypePattern.Process(new SomeType()));
 Console.WriteLine(TypePattern.Process(new SomeOtherType()));
+Console.WriteLine(TypePattern.ProcessConditionally(new SomeType() { SomeProperty = 0 }));
+Console.WriteLine(TypePattern.ProcessConditionally(new SomeType() { SomeProperty = 1 })); 
 
 Console.WriteLine("\n--RelationalPattern--");
+Console.WriteLine(RelationalPattern.Classify(200));
 Console.WriteLine(RelationalPattern.Classify(1));
 double zero = 0;
 Console.WriteLine(RelationalPattern.Classify(0/zero));
@@ -38,8 +42,9 @@ Console.WriteLine(VarPattern.TransformOrder(new Order(new OrderDetail[] { new Or
 Console.WriteLine("\n--ListPattern.PrintNumbers--");
 ListPattern.PrintNumberPatterns();
 
+
 Console.WriteLine("\n--ListPattern.ProcessName--");
-//Autheur
+//Auteur
 Console.WriteLine(ListPattern.ProcessName(new string[] { "Christian", "Peeters" }));
 // Tussenvoegsel "de"
 Console.WriteLine(ListPattern.ProcessName(new string[] { "Christian", "de", "Vries" }));

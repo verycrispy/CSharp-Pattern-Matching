@@ -15,7 +15,7 @@ namespace PatternMatching
         public static bool ProcessConditionally(object item) =>
             item switch
             {
-                SomeType someType when someType.SomeProperty <= 0 => false,
+                SomeType someType when someType.SomeProperty <= 0 => true,
                 SomeType someType => someType.SomeMethod(),
                 SomeOtherType someOtherType => someOtherType.SomeOtherMethod(),
                 _ => throw new NotImplementedException(),
