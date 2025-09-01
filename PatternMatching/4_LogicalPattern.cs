@@ -10,5 +10,12 @@
             >= 7 and < 9 => "Good",
             >= 9 => "Excellent",
         };
+        public static string IsItWeekend(DateTime dateTime) => dateTime.DayOfWeek switch
+        {
+            DayOfWeek.Saturday or DayOfWeek.Sunday => "It's weekend",
+            DayOfWeek.Friday => "Almost weekend, hang in there",
+            not DayOfWeek.Monday => "Nope! #LoveMyJob",
+            _ => "Weekend just ended"
+        };
     }
 }
